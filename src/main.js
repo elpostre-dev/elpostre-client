@@ -28,7 +28,7 @@ Vue.use(Toast, {
 
 
 // window.URI = 'http://127.0.0.1:3001/api/v1'
-window.URI = 'https://postre-server.herokuapp.com/api/v1'
+window.URI = 'https://quiet-leandra-elpostre-a2b95fa0.koyeb.app/api/v1'
 
 new Vue({
   router,
