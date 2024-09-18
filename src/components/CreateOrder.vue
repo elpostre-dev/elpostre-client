@@ -292,17 +292,19 @@ export default {
             },
         })
             .then(res => {
-                this.cats = res.data.data
+                console.log('/categories res', res); // Verifica aquí los datos
+                this.cats = res.data.data;
             })
             .catch(err => {
-                console.log(err)
-            })
+                console.log(err);
+            });
         DB.get(`${URI}/products`, {
             headers: {
                 authorization: `Bearer ${this.$store.state.sToken}`,
             },
         })
             .then(res => {
+                console.log('/products res', res); // Verifica aquí los datos
                 this.prods = res.data.data
             })
             .catch(err => {
