@@ -412,7 +412,7 @@ export default {
                 cats: [],
                 sComment: '',
                 eEstablishmentes: ['Mississippi', 'Lomas'],
-                eEstablishment: '',
+                eEstablishment: 'Mississippi',
                 sSalesAgent: '',
                 hora: '',
                 horarios: [
