@@ -287,7 +287,6 @@ export default {
     },
     beforeMount() {
         DB.get(`${URI}/categories`, {
-            withCredentials: true,
             headers: {
                 authorization: `Bearer ${this.$store.state.sToken}`,
             },
@@ -300,7 +299,6 @@ export default {
                 console.log(err);
             });
         DB.get(`${URI}/products`, {
-            withCredentials: true,
             headers: {
                 authorization: `Bearer ${this.$store.state.sToken}`,
             },
@@ -316,7 +314,6 @@ export default {
     watch: {
         neworder: function () {
             DB.get(`${URI}/categories`, {
-                withCredentials: true,
                 headers: {
                     authorization: `Bearer ${this.$store.state.sToken}`,
                 },
@@ -328,7 +325,6 @@ export default {
                     console.log(err)
                 })
             DB.get(`${URI}/products`, {
-                withCredentials: true,
                 headers: {
                     authorization: `Bearer ${this.$store.state.sToken}`,
                 },
@@ -456,7 +452,6 @@ export default {
             }
             DB.get(`${URI}/products`, {
                 params,
-                withCredentials: true,
                 headers: {
                     authorization: `Bearer ${this.$store.state.sToken}`,
                 },
@@ -546,7 +541,6 @@ export default {
             }
 
             DB.post(`${URI}/orders`, data, {
-                withCredentials: true,
                 headers: {
                     Authorization: `Bearer ${this.$store.state.sToken}`,
                 },
