@@ -265,7 +265,7 @@ export default {
                 },
             ],
             pagadoOptions: ['Todos', 'Pagados', 'No Pagados'],
-            sucursal: 'Mississippi',
+            sucursal: '',
             headers: [
                 {
                     text: 'Cliente',
@@ -449,8 +449,9 @@ export default {
             this.bEditOrder = true
         },
         getPedidos() {
-            let eEstablishment = this.sucursal
+            let eEstablishment = this.sucursal || ''
             let paidStatus = this.sPaid
+
             if (this.sucursal == 'Todas') eEstablishment = ''
             if (paidStatus == 'Pagados') {
                 paidStatus = true
@@ -459,6 +460,7 @@ export default {
             } else {
                 paidStatus = null
             }
+            
             DB.get(
                 `${URI}/orders`,
 
