@@ -265,7 +265,7 @@ export default {
                 },
             ],
             pagadoOptions: ['Todos', 'Pagados', 'No Pagados'],
-            sucursal: '',
+            sucursal: 'Mississippi',
             headers: [
                 {
                     text: 'Cliente',
