@@ -348,9 +348,9 @@ export default {
     },
     beforeMount() {
         DB.get(`${URI}/categories`, {
-            withCredentials: true,
             headers: {
                 authorization: `Bearer ${this.$store.state.sToken}`,
+                ContentType: 'application/json',
             },
         })
             .then(res => {
@@ -358,9 +358,9 @@ export default {
             })
             .catch(err => {})
         DB.get(`${URI}/products`, {
-            withCredentials: true,
             headers: {
                 authorization: `Bearer ${this.$store.state.sToken}`,
+                ContentType: 'application/json',
             },
         })
             .then(res => {
@@ -449,10 +449,10 @@ export default {
                 sCategoryId: this.currentCat.sCategoryId,
             }
             DB.get(`${URI}/products`, {
-                withCredentials: true,
                 params,
                 headers: {
                     authorization: `Bearer ${this.$store.state.sToken}`,
+                    ContentType: 'application/json',
                 },
             })
                 .then(res => {
@@ -536,9 +536,9 @@ export default {
                 sComment: this.order.sComment,
             }
             DB.put(`${URI}/orders/${this.order.sOrderId}`, data, {
-                withCredentials: true,
                 headers: {
                     Authorization: `Bearer ${this.$store.state.sToken}`,
+                    ContentType: 'application/json',
                 },
             })
                 .then(res => {

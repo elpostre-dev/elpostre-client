@@ -287,9 +287,9 @@ export default {
     },
     beforeMount() {
         DB.get(`${URI}/categories`, {
-            withCredentials: true,
             headers: {
                 authorization: `Bearer ${this.$store.state.sToken}`,
+                ContentType: 'application/json',
             },
         })
             .then(res => {
@@ -300,9 +300,9 @@ export default {
                 console.log(err);
             });
         DB.get(`${URI}/products`, {
-            withCredentials: true,
             headers: {
                 authorization: `Bearer ${this.$store.state.sToken}`,
+                ContentType: 'application/json',
             },
         })
             .then(res => {
@@ -316,9 +316,9 @@ export default {
     watch: {
         neworder: function () {
             DB.get(`${URI}/categories`, {
-                withCredentials: true,
                 headers: {
                     authorization: `Bearer ${this.$store.state.sToken}`,
+                    ContentType: 'application/json',
                 },
             })
                 .then(res => {
@@ -328,9 +328,9 @@ export default {
                     console.log(err)
                 })
             DB.get(`${URI}/products`, {
-                withCredentials: true,
                 headers: {
                     authorization: `Bearer ${this.$store.state.sToken}`,
+                    ContentType: 'application/json',
                 },
             })
                 .then(res => {
@@ -456,9 +456,9 @@ export default {
             }
             DB.get(`${URI}/products`, {
                 params,
-                withCredentials: true,
                 headers: {
                     authorization: `Bearer ${this.$store.state.sToken}`,
+                    ContentType: 'application/json',
                 },
             })
                 .then(res => {
@@ -546,9 +546,9 @@ export default {
             }
 
             DB.post(`${URI}/orders`, data, {
-                withCredentials: true,
                 headers: {
                     Authorization: `Bearer ${this.$store.state.sToken}`,
+                    ContentType: 'application/json',
                 },
             })
                 .then(res => {

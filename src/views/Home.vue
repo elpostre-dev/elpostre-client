@@ -399,6 +399,7 @@ export default {
                 {
                     headers: {
                         authorization: `Bearer ${this.$store.state.sToken}`,
+                        ContentType: 'application/json',
                     },
                 }
             )
@@ -423,6 +424,7 @@ export default {
             DB.delete(`${URI}/orders/${this.pedidoParaBorrar.sOrderId}`, {
                 headers: {
                     authorization: `Bearer ${this.$store.state.sToken}`,
+                    ContentType: 'application/json',
                 },
             })
                 .then(res => {
@@ -467,6 +469,7 @@ export default {
                 {
                     headers: {
                         authorization: `Bearer ${this.$store.state.sToken}`,
+                        ContentType: 'application/json',
                     },
                     params: {
                         eEstablishment,
