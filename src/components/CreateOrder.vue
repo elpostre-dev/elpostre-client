@@ -289,24 +289,20 @@ export default {
         DB.get(`${URI}/categories`, {
             headers: {
                 authorization: `Bearer ${this.$store.state.sToken}`,
-                ContentType: 'application/json',
             },
         })
             .then(res => {
-                console.log('/categories res', res); // Verifica aquí los datos
-                this.cats = res.data.data;
+                this.cats = res.data.data
             })
             .catch(err => {
-                console.log(err);
-            });
+                console.log(err)
+            })
         DB.get(`${URI}/products`, {
             headers: {
                 authorization: `Bearer ${this.$store.state.sToken}`,
-                ContentType: 'application/json',
             },
         })
             .then(res => {
-                console.log('/products res', res); // Verifica aquí los datos
                 this.prods = res.data.data
             })
             .catch(err => {
@@ -318,7 +314,6 @@ export default {
             DB.get(`${URI}/categories`, {
                 headers: {
                     authorization: `Bearer ${this.$store.state.sToken}`,
-                    ContentType: 'application/json',
                 },
             })
                 .then(res => {
@@ -330,7 +325,6 @@ export default {
             DB.get(`${URI}/products`, {
                 headers: {
                     authorization: `Bearer ${this.$store.state.sToken}`,
-                    ContentType: 'application/json',
                 },
             })
                 .then(res => {
@@ -458,7 +452,6 @@ export default {
                 params,
                 headers: {
                     authorization: `Bearer ${this.$store.state.sToken}`,
-                    ContentType: 'application/json',
                 },
             })
                 .then(res => {
@@ -548,7 +541,6 @@ export default {
             DB.post(`${URI}/orders`, data, {
                 headers: {
                     Authorization: `Bearer ${this.$store.state.sToken}`,
-                    ContentType: 'application/json',
                 },
             })
                 .then(res => {

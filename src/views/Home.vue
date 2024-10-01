@@ -399,7 +399,6 @@ export default {
                 {
                     headers: {
                         authorization: `Bearer ${this.$store.state.sToken}`,
-                        ContentType: 'application/json',
                     },
                 }
             )
@@ -424,7 +423,6 @@ export default {
             DB.delete(`${URI}/orders/${this.pedidoParaBorrar.sOrderId}`, {
                 headers: {
                     authorization: `Bearer ${this.$store.state.sToken}`,
-                    ContentType: 'application/json',
                 },
             })
                 .then(res => {
@@ -451,9 +449,8 @@ export default {
             this.bEditOrder = true
         },
         getPedidos() {
-            let eEstablishment = this.sucursal || ''
+            let eEstablishment = this.sucursal
             let paidStatus = this.sPaid
-
             if (this.sucursal == 'Todas') eEstablishment = ''
             if (paidStatus == 'Pagados') {
                 paidStatus = true
@@ -462,14 +459,12 @@ export default {
             } else {
                 paidStatus = null
             }
-            
             DB.get(
                 `${URI}/orders`,
 
                 {
                     headers: {
                         authorization: `Bearer ${this.$store.state.sToken}`,
-                        ContentType: 'application/json',
                     },
                     params: {
                         eEstablishment,

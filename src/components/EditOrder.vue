@@ -350,7 +350,6 @@ export default {
         DB.get(`${URI}/categories`, {
             headers: {
                 authorization: `Bearer ${this.$store.state.sToken}`,
-                ContentType: 'application/json',
             },
         })
             .then(res => {
@@ -360,7 +359,6 @@ export default {
         DB.get(`${URI}/products`, {
             headers: {
                 authorization: `Bearer ${this.$store.state.sToken}`,
-                ContentType: 'application/json',
             },
         })
             .then(res => {
@@ -452,7 +450,6 @@ export default {
                 params,
                 headers: {
                     authorization: `Bearer ${this.$store.state.sToken}`,
-                    ContentType: 'application/json',
                 },
             })
                 .then(res => {
@@ -538,7 +535,6 @@ export default {
             DB.put(`${URI}/orders/${this.order.sOrderId}`, data, {
                 headers: {
                     Authorization: `Bearer ${this.$store.state.sToken}`,
-                    ContentType: 'application/json',
                 },
             })
                 .then(res => {
